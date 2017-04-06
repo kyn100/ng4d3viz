@@ -29,10 +29,14 @@ export class AppComponent implements OnInit {
     let width = 600 - margin.left - margin.right;
     let height = 600 - margin.top - margin.bottom;
 
+    //create svg
+
     let svg = d3.select(this.element.nativeElement).append('svg')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
       .style('background-color', '#efefef');
+
+    //plot area
 
     let chart = svg.append("g")
       .attr('class', 'bar')
@@ -63,6 +67,7 @@ export class AppComponent implements OnInit {
         .attr('transform', `translate(${margin.left}, ${margin.top})`)
         .call(d3.axisLeft(y));
 
+    // plot chart with data
     svg.selectAll("bar")
         .data(this.data)
         .enter().append("rect")
