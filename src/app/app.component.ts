@@ -8,7 +8,6 @@ import * as d3 from 'd3';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  host;
   data = [
     {salesperson: 'Bob',sales:33},
     {salesperson: 'Robin',sales:12},
@@ -18,7 +17,6 @@ export class AppComponent implements OnInit {
   ];
 
   constructor(private element: ElementRef){
-    this.host = d3.select(this.element.nativeElement);
   } 
 
   ngOnInit(){
@@ -31,8 +29,7 @@ export class AppComponent implements OnInit {
     let width = 600 - margin.left - margin.right;
     let height = 600 - margin.top - margin.bottom;
 
-    this.host.html('');
-    let svg = this.host.append('svg')
+    let svg = d3.select(this.element.nativeElement).append('svg')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
       .style('background-color', '#efefef');
