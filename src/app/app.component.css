@@ -1,22 +1,8 @@
-html, body {
-  margin: 10;
-  height: 100%
-}
-
-/*Rectangle bar class styling*/
-
 .bar {
-  fill: #0080FF
+  fill: #fd6309
 }
 
 .bar:hover {
-  fill: #003366
-}
-
-/*Text class styling*/
-
-.text {
-  fill: white;
-  font-family: sans-serif
+  fill: #0080FF
 }
 
